@@ -1,0 +1,14 @@
+body {
+  background: radial-gradient(circle at top left, #520df3, #9852e7);
+  color: white;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
