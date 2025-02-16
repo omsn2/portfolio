@@ -79,7 +79,7 @@ const Projects = () => (
     <SectionTitle>Projects / Open-Source</SectionTitle>
     <ProjectGrid>
       <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage src="/assets/langchain2.png" alt="Langchain Q&A Tool" />
+        <ProjectImage src={`${process.env.PUBLIC_URL}/assets/langchain2.png`} alt="Langchain Q&A Tool" />
         <ProjectTitle>Langchain Q&A Tool using LLMs</ProjectTitle>
         <ProjectDescription>
           Advanced text analysis with NLP, NER, sentiment analysis, multilingual support, and text-to-speech.
@@ -95,7 +95,7 @@ const Projects = () => (
       </ProjectItem>
 
       <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage src="/assets/image3.jpg" alt="Hospital Management System" />
+        <ProjectImage src={`${process.env.PUBLIC_URL}/assets/image3.jpg`} alt="Hospital Management System" />
         <ProjectTitle>Hospital Management System</ProjectTitle>
         <ProjectDescription>
           Operations management with patient management, appointment scheduling, and Spring Security integration.
@@ -111,7 +111,7 @@ const Projects = () => (
       </ProjectItem>
 
       <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage src="/assets/iot.webp" alt="IoT-Based Smart Energy Monitoring" />
+        <ProjectImage src={`${process.env.PUBLIC_URL}/assets/iot.webp`} alt="IoT-Based Smart Energy Monitoring" />
         <ProjectTitle>IoT-Based Smart Energy Monitoring</ProjectTitle>
         <ProjectDescription>
           Real-time energy monitoring with sensors, interactive dashboard, and 15% energy waste reduction.
@@ -127,7 +127,7 @@ const Projects = () => (
       </ProjectItem>
 
       <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage src="/assets/image2.jpg" alt="Gym Management System" />
+        <ProjectImage src={`${process.env.PUBLIC_URL}/assets/image2.jpg`} alt="Gym Management System" />
         <ProjectTitle>Gym Management System</ProjectTitle>
         <ProjectDescription>
           Member management, attendance tracking, workout scheduling, and secure payment processing.
