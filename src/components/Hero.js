@@ -157,7 +157,7 @@ const Hero = () => {
     <>
       <HeroContainer id="hero">
         <LeftContent>
-          <img src="/assets/image.png" alt="Phone" /> {/* Replace with your phone image */}
+        <img src={`${process.env.PUBLIC_URL}/assets/image.png`} alt="Image 1" />{/* Replace with your phone image */}
           <LuffyQuote>
             "As Long As I Live, There Are Infinite Chances!" - Monkey D. Luffy
           </LuffyQuote>
