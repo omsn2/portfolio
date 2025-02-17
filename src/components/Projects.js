@@ -114,7 +114,7 @@ const Projects = () => (
 
       <ProjectItem {...fadeInUp} {...hoverEffect}>
         <ProjectImage 
-          src={`${process.env.PUBLIC_URL}/assets/iot.webp`} 
+          src={`${process.env.PUBLIC_URL}/assets/Iot.webp`} 
           alt="IoT-Based Smart Energy Monitoring" 
         />
         <ProjectTitle>IoT-Based Smart Energy Monitoring</ProjectTitle>
