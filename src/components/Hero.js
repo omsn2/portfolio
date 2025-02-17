@@ -6,6 +6,7 @@ import { SiLeetcode } from 'react-icons/si';
 import { fadeInUp } from '../animations';
 
 const HeroContainer = styled.section`
+  padding-top: 80px; /* Adjust this to match navbar height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,12 +16,13 @@ const HeroContainer = styled.section`
   padding: 2rem 8%;
   text-align: left;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
+    padding-top: 60px; /* Smaller padding on mobile */
     flex-direction: column;
     text-align: center;
-    padding: 2rem;
   }
 `;
+
 
 const LeftContent = styled.div`
   flex: 1;
@@ -30,7 +32,7 @@ const LeftContent = styled.div`
   justify-content: center;
 
   img {
-    width: 70%;
+    width: 48%;
     max-width: 250px;
     border-radius: 20px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
@@ -39,7 +41,7 @@ const LeftContent = styled.div`
 
   @media (max-width: 768px) {
     img {
-      width: 80%;
+      width: 48%;
       max-width: 200px;
     }
   }
@@ -171,7 +173,7 @@ const Hero = () => {
     <>
       <HeroContainer id="hero">
         <LeftContent>
-          <img src={`${process.env.PUBLIC_URL}/assets/image.png`} alt="Image 1" />
+          <img src={`${process.env.PUBLIC_URL}/assets/image.png`} alt="Phone with creative digital design" />
           <LuffyQuote>
             "As Long As I Live, There Are Infinite Chances!" - Monkey D. Luffy
           </LuffyQuote>

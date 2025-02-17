@@ -7,19 +7,28 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
- background: radial-gradient(circle at top left, #520df3, #e79772);
+  background: radial-gradient(circle at top left, #520df3, #e79772);
   color: #fff;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 1.5rem;
+  }
 `;
 
 const Logo = styled.h1`
   font-size: 1.8rem;
   font-weight: bold;
-  color:rgb(245, 248, 248);
+  color: rgb(245, 248, 248);
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const NavLinks = styled.ul`
@@ -28,11 +37,6 @@ const NavLinks = styled.ul`
 
   li {
     margin: 0 1rem;
-  }
-
-  /* Adjust Contact Button Margin */
-  li:last-child {
-    margin-right: 2rem; /* ✅ Move Contact button slightly to the left */
   }
 
   .nav-link {
@@ -48,8 +52,21 @@ const NavLinks = styled.ul`
       background: radial-gradient(circle at top left, #520df3, #e79772);
     }
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
+const MobileMenu = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+`;
 
 const Navbar = () => {
   return (
@@ -64,6 +81,7 @@ const Navbar = () => {
         <li><Link className="nav-link" to="certifications" smooth={true} duration={500}>Certifications</Link></li>
         <li><Link className="nav-link" to="contact" smooth={true} duration={500}>Contact</Link></li>
       </NavLinks>
+      <MobileMenu>☰</MobileMenu>
     </NavbarContainer>
   );
 };
