@@ -18,6 +18,7 @@ const HeroContainer = styled.section`
   @media (max-width: 1024px) {
     flex-direction: column;
     text-align: center;
+    padding: 2rem;
   }
 `;
 
@@ -29,26 +30,29 @@ const LeftContent = styled.div`
   justify-content: center;
 
   img {
-    width: 30%;
+    width: 70%;
+    max-width: 250px;
     border-radius: 20px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     img {
       width: 80%;
+      max-width: 200px;
     }
   }
 `;
 
 const LuffyQuote = styled(motion.p)`
-  font-size: 1.5rem;
-  color:rgb(225, 226, 231);
+  font-size: 1.3rem;
+  color: rgb(225, 226, 231);
   font-style: italic;
   font-weight: bold;
   margin-top: 1rem;
   text-align: center;
-  max-width: 80%;
+  max-width: 90%;
   line-height: 1.5;
   opacity: 0;
   animation: fadeIn 2s forwards;
@@ -60,35 +64,45 @@ const LuffyQuote = styled(motion.p)`
   }
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 `;
 
 const RightContent = styled.div`
   flex: 1;
   padding: 2rem;
+
+  @media (max-width: 1024px) {
+    padding: 0;
+    margin-top: 2rem;
+  }
 `;
 
 const Quote = styled(motion.h1)`
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #c0727f;
   font-weight: bold;
   line-height: 1.3;
 
   span {
-    color:rgb(228, 230, 240);
+    color: rgb(228, 230, 240);
   }
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.2;
   }
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.2rem;
-  color:rgb(225, 227, 240);
+  font-size: 1rem;
+  color: rgb(225, 227, 240);
   margin-top: 1rem;
   line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 /* Floating Action Button */
@@ -157,7 +171,7 @@ const Hero = () => {
     <>
       <HeroContainer id="hero">
         <LeftContent>
-        <img src={`${process.env.PUBLIC_URL}/assets/image.png`} alt="Image 1" />{/* Replace with your phone image */}
+          <img src={`${process.env.PUBLIC_URL}/assets/image.png`} alt="Image 1" />
           <LuffyQuote>
             "As Long As I Live, There Are Infinite Chances!" - Monkey D. Luffy
           </LuffyQuote>

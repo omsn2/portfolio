@@ -11,7 +11,7 @@ const ProjectsContainer = styled.section`
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color:rgb(248, 247, 247);
+  color: rgb(248, 247, 247);
   margin-bottom: 2rem;
   font-weight: bold;
 `;
@@ -23,7 +23,7 @@ const ProjectGrid = styled.div`
 `;
 
 const ProjectItem = styled(motion.div)`
-  background: radial-gradient(circle at top left,rgb(15, 15, 15),rgb(169, 107, 250));
+  background: radial-gradient(circle at top left, rgb(15, 15, 15), rgb(169, 107, 250));
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -38,6 +38,8 @@ const ProjectItem = styled(motion.div)`
 
 const ProjectImage = styled.img`
   width: 100%;
+  max-height: 200px;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
 `;
@@ -79,7 +81,10 @@ const Projects = () => (
     <SectionTitle>Projects / Open-Source</SectionTitle>
     <ProjectGrid>
       <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage src={`${process.env.PUBLIC_URL}/assets/langchain2.png`} alt="Langchain Q&A Tool" />
+        <ProjectImage 
+          src={`${process.env.PUBLIC_URL}/assets/langchain2.png`} 
+          alt="Langchain Q&A Tool" 
+        />
         <ProjectTitle>Langchain Q&A Tool using LLMs</ProjectTitle>
         <ProjectDescription>
           Advanced text analysis with NLP, NER, sentiment analysis, multilingual support, and text-to-speech.
@@ -88,14 +93,14 @@ const Projects = () => (
           <ProjectButton href="https://github.com/omsn2/Langchain_Q-A_tool_using_PDF_URL" target="_blank">
             GitHub
           </ProjectButton>
-          {/* <ProjectButton href="https://langchain-demo.com" target="_blank">
-            Live Demo
-          </ProjectButton> */}
         </ButtonGroup>
       </ProjectItem>
 
       <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage src={`${process.env.PUBLIC_URL}/assets/image3.jpg`} alt="Hospital Management System" />
+        <ProjectImage 
+          src={`${process.env.PUBLIC_URL}/assets/image3.jpg`} 
+          alt="Hospital Management System" 
+        />
         <ProjectTitle>Hospital Management System</ProjectTitle>
         <ProjectDescription>
           Operations management with patient management, appointment scheduling, and Spring Security integration.
@@ -104,14 +109,14 @@ const Projects = () => (
           <ProjectButton href="https://github.com/omsn2/Hospital_management_using_spring_boot" target="_blank">
             GitHub
           </ProjectButton>
-          {/* <ProjectButton href="https://hospital-demo.com" target="_blank">
-            Live Demo
-          </ProjectButton> */}
         </ButtonGroup>
       </ProjectItem>
 
       <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage src={`${process.env.PUBLIC_URL}/assets/iot.webp`} alt="IoT-Based Smart Energy Monitoring" />
+        <ProjectImage 
+          src={`${process.env.PUBLIC_URL}/assets/iot.webp`} 
+          alt="IoT-Based Smart Energy Monitoring" 
+        />
         <ProjectTitle>IoT-Based Smart Energy Monitoring</ProjectTitle>
         <ProjectDescription>
           Real-time energy monitoring with sensors, interactive dashboard, and 15% energy waste reduction.
@@ -120,14 +125,14 @@ const Projects = () => (
           <ProjectButton href="https://github.com/omsn2/IoT_Energy_Monitoring" target="_blank">
             GitHub
           </ProjectButton>
-          {/* <ProjectButton href="https://iot-energy-demo.com" target="_blank">
-            Live Demo
-          </ProjectButton> */}
         </ButtonGroup>
       </ProjectItem>
 
       <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage src={`${process.env.PUBLIC_URL}/assets/image2.jpg`} alt="Gym Management System" />
+        <ProjectImage 
+          src={`${process.env.PUBLIC_URL}/assets/image2.jpg`} 
+          alt="Gym Management System" 
+        />
         <ProjectTitle>Gym Management System</ProjectTitle>
         <ProjectDescription>
           Member management, attendance tracking, workout scheduling, and secure payment processing.
@@ -136,9 +141,6 @@ const Projects = () => (
           <ProjectButton href="https://github.com/omsn2/Gym_Management_System" target="_blank">
             GitHub
           </ProjectButton>
-          {/* <ProjectButton href="https://gym-management-demo.com" target="_blank">
-            Live Demo
-          </ProjectButton> */}
         </ButtonGroup>
       </ProjectItem>
     </ProjectGrid>
