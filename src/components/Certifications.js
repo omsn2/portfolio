@@ -112,14 +112,14 @@ const Certifications = () => {
       <CertificationItem {...fadeInUp} {...hoverEffect}>
         <h3>Microsoft Certified Azure AI Fundamentals - KodeKloud</h3>
         <CertificateButton onClick={() => openModal('/assets/certificates/Azure_page-0001.jpg')}>
-          Show Certificate
-        </CertificateButton>
+  Show Certificate
+</CertificateButton>
       </CertificationItem>
       <CertificationItem {...fadeInUp} {...hoverEffect}>
         <h3>Docker Training Course for the Absolute Beginner - KodeKloud</h3>
         <CertificateButton onClick={() => openModal('/assets/certificates/Docker_page-0001.jpg')}>
-          Show Certificate
-        </CertificateButton>
+  Show Certificate
+</CertificateButton>
       </CertificationItem>
 
       <AnimatePresence>
