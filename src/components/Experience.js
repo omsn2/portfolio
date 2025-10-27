@@ -35,13 +35,18 @@ const Experience = () => (
   <ExperienceContainer id="experience">
     <SectionTitle>Experience</SectionTitle>
     <ExperienceItem {...fadeInUp} {...hoverEffect}>
-      <h3>Sparks Foundation | Machine Learning Intern</h3>
-      <p>Bengaluru, India | November - December</p>
-      <ul>
-        <li>Developed a real-time dashboard for equipment health monitoring.</li>
-        <li>Reduced reporting time by ~2 hours/week with predictive insights.</li>
-        <li>Enhanced equipment reliability with data-driven maintenance decisions.</li>
-      </ul>
+      <h3>Digital Blanket | Software Engineer I</h3>
+      <p>Bengaluru, India | April 2025 - Present</p>
+     <ul>
+  <li>Built containerized real-time CDC pipeline using Debezium and Kafka deployed on Docker, processing 100K+ events/hour with Kafka Streams for event routing, supporting 500+ concurrent users with 99.5% uptime</li>
+  <li>Orchestrated multi-database CDC infrastructure deploying Debezium connectors for MySQL, PostgreSQL, and MongoDB in Docker containers with 99.9% reliability, reducing data latency from 24 hours to 5 seconds</li>
+  <li>Implemented containerized microservices architecture using Docker Compose for Kafka cluster, Debezium Connect, and Zookeeper, enabling rapid deployment, horizontal scaling, and environment consistency</li>
+  <li>Delivered enterprise reporting solution replacing legacy systems with Apache Superset self-service BI platform, configured for high-concurrency supporting 50+ users with advanced visualizations</li>
+  <li>Architected configuration-driven API gateway using Node.js/Express.js with adapter pattern, enabling dynamic backend service integration via JSON configs, reducing integration time by 80%</li>
+  <li>Developed multi-step orchestration engine in Node.js with sequential API workflows, in-memory caching, and dynamic payload construction, improving pipeline efficiency by 65%</li>
+  <li>Established monitoring infrastructure with Kafka Connect metrics, health checks, and Superset alerts, reducing MTTR by 70%</li>
+</ul>
+
     </ExperienceItem>
   </ExperienceContainer>
 );
