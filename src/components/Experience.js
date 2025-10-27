@@ -46,10 +46,6 @@ const Experience = () => (
   <li>Developed multi-step orchestration engine in Node.js with sequential API workflows, in-memory caching, and dynamic payload construction, improving pipeline efficiency by 65%</li>
   <li>Established monitoring infrastructure with Kafka Connect metrics, health checks, and Superset alerts, reducing MTTR by 70%</li>
 </ul>
-<<<<<<< HEAD
-
-=======
->>>>>>> ab48b95 (Updated experience and certifications components, removed unused assets)
     </ExperienceItem>
   </ExperienceContainer>
 );
