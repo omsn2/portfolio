@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { fadeInUp, hoverEffect } from '../animations';
+import { portfolioData } from '../data/portfolioData';
 
 const ProjectsContainer = styled.section`
   padding: 5rem 8%;
@@ -29,6 +30,8 @@ const ProjectItem = styled(motion.div)`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   text-align: left;
   transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: translateY(-5px);
@@ -53,13 +56,30 @@ const ProjectTitle = styled.h3`
 const ProjectDescription = styled.p`
   color: #ffffffcc;
   margin-bottom: 1rem;
+  flex-grow: 1;
+`;
+
+const TechStack = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+`;
+
+const TechTag = styled.span`
+  background: rgba(108, 164, 156, 0.2);
+  color: #6ca49c;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: auto;
 `;
 
 const ProjectButton = styled.a`
@@ -76,75 +96,38 @@ const ProjectButton = styled.a`
   }
 `;
 
-const Projects = () => (
-  <ProjectsContainer id="projects">
-    <SectionTitle>Projects / Open-Source</SectionTitle>
-    <ProjectGrid>
-      <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage 
-          src={`${process.env.PUBLIC_URL}/assets/langchain2.png`} 
-          alt="Langchain Q&A Tool" 
-        />
-        <ProjectTitle>Langchain Q&A Tool using LLMs</ProjectTitle>
-        <ProjectDescription>
-          Advanced text analysis with NLP, NER, sentiment analysis, multilingual support, and text-to-speech.
-        </ProjectDescription>
-        <ButtonGroup>
-          <ProjectButton href="https://github.com/omsn2/Langchain_Q-A_tool_using_PDF_URL" target="_blank">
-            GitHub
-          </ProjectButton>
-        </ButtonGroup>
-      </ProjectItem>
+const Projects = () => {
+  const { projects } = portfolioData;
 
-      <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage 
-          src={`${process.env.PUBLIC_URL}/assets/image3.jpg`} 
-          alt="Hospital Management System" 
-        />
-        <ProjectTitle>Hospital Management System</ProjectTitle>
-        <ProjectDescription>
-          Operations management with patient management, appointment scheduling, and Spring Security integration.
-        </ProjectDescription>
-        <ButtonGroup>
-          <ProjectButton href="https://github.com/omsn2/Hospital_management_using_spring_boot" target="_blank">
-            GitHub
-          </ProjectButton>
-        </ButtonGroup>
-      </ProjectItem>
-
-      <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage 
-          src={`${process.env.PUBLIC_URL}/assets/Iot.webp`} 
-          alt="IoT-Based Smart Energy Monitoring" 
-        />
-        <ProjectTitle>IoT-Based Smart Energy Monitoring</ProjectTitle>
-        <ProjectDescription>
-          Real-time energy monitoring with sensors, interactive dashboard, and 15% energy waste reduction.
-        </ProjectDescription>
-        <ButtonGroup>
-          <ProjectButton href="https://github.com/omsn2/IoT_Energy_Monitoring" target="_blank">
-            GitHub
-          </ProjectButton>
-        </ButtonGroup>
-      </ProjectItem>
-
-      <ProjectItem {...fadeInUp} {...hoverEffect}>
-        <ProjectImage 
-          src={`${process.env.PUBLIC_URL}/assets/image2.jpg`} 
-          alt="Gym Management System" 
-        />
-        <ProjectTitle>Gym Management System</ProjectTitle>
-        <ProjectDescription>
-          Member management, attendance tracking, workout scheduling, and secure payment processing.
-        </ProjectDescription>
-        <ButtonGroup>
-          <ProjectButton href="https://github.com/omsn2/Gym_Management_System" target="_blank">
-            GitHub
-          </ProjectButton>
-        </ButtonGroup>
-      </ProjectItem>
-    </ProjectGrid>
-  </ProjectsContainer>
-);
+  return (
+    <ProjectsContainer id="projects">
+      <SectionTitle>Projects / Open-Source</SectionTitle>
+      <ProjectGrid>
+        {projects.map((project, index) => (
+          <ProjectItem key={index} {...fadeInUp} {...hoverEffect}>
+            <ProjectImage 
+              src={`${process.env.PUBLIC_URL}${project.image}`} 
+              alt={project.title} 
+            />
+            <ProjectTitle>{project.title}</ProjectTitle>
+            <TechStack>
+              {project.techStack.map((tech, idx) => (
+                <TechTag key={idx}>{tech}</TechTag>
+              ))}
+            </TechStack>
+            <ProjectDescription>
+              {project.description}
+            </ProjectDescription>
+            <ButtonGroup>
+              <ProjectButton href={project.link} target="_blank">
+                GitHub
+              </ProjectButton>
+            </ButtonGroup>
+          </ProjectItem>
+        ))}
+      </ProjectGrid>
+    </ProjectsContainer>
+  );
+};
 
 export default Projects;

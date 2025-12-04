@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeInUp, hoverEffect } from '../animations';
+import { portfolioData } from '../data/portfolioData';
 
 const CertificationsContainer = styled.section`
   padding: 5rem 8%;
@@ -11,13 +12,13 @@ const CertificationsContainer = styled.section`
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color:rgb(249, 250, 250);
+  color: rgb(249, 250, 250);
   margin-bottom: 2rem;
   font-weight: bold;
 `;
 
 const CertificationItem = styled(motion.div)`
-  background:rgb(21, 16, 71);
+  background: rgb(21, 16, 71);
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -96,6 +97,7 @@ const CertificateImage = styled.img`
 const Certifications = () => {
   const [modalImage, setModalImage] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const { certifications } = portfolioData;
 
   const openModal = (image) => {
     setModalImage(image);
@@ -109,18 +111,14 @@ const Certifications = () => {
   return (
     <CertificationsContainer id="certifications">
       <SectionTitle>Certifications</SectionTitle>
-      <CertificationItem {...fadeInUp} {...hoverEffect}>
-        <h3>Microsoft Certified Azure AI Fundamentals - KodeKloud</h3>
-        <CertificateButton onClick={() => openModal('/assets/certificates/Azure_page-0001.jpg')}>
-          Show Certificate
-        </CertificateButton>
-      </CertificationItem>
-      <CertificationItem {...fadeInUp} {...hoverEffect}>
-        <h3>Docker Training Course for the Absolute Beginner - KodeKloud</h3>
-        <CertificateButton onClick={() => openModal('/assets/certificates/Docker_page-0001.jpg')}>
-          Show Certificate
-        </CertificateButton>
-      </CertificationItem>
+      {certifications.map((cert, index) => (
+        <CertificationItem key={index} {...fadeInUp} {...hoverEffect}>
+          <h3>{cert.title}</h3>
+          <CertificateButton onClick={() => openModal(`${process.env.PUBLIC_URL}${cert.image}`)}>
+            Show Certificate
+          </CertificateButton>
+        </CertificationItem>
+      ))}
 
       <AnimatePresence>
         {showModal && (

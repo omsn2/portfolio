@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaSchool, FaUniversity} from 'react-icons/fa';
 import { fadeInUp } from '../animations';
+import { portfolioData } from '../data/portfolioData';
 
 const EducationContainer = styled.section`
   padding: 5rem 8%;
@@ -12,7 +12,7 @@ const EducationContainer = styled.section`
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color:rgb(245, 243, 243);
+  color: rgb(245, 243, 243);
   margin-bottom: 2rem;
   font-weight: bold;
 `;
@@ -100,32 +100,24 @@ const TimelineItem = styled(motion.div)`
   }
 `;
 
-const Education = () => (
-  <EducationContainer id="education">
-    <SectionTitle>Education</SectionTitle>
-    <Timeline>
-      <TimelineItem {...fadeInUp}>
-        <FaSchool />
-        <h3>Bapuji International School, Badagandi</h3>
-        <p>10th Grade | 2018 - 2019</p>
-        <span>Percentage: 88.4%</span>
-      </TimelineItem>
+const Education = () => {
+  const { education } = portfolioData;
 
-      <TimelineItem {...fadeInUp}>
-        <FaSchool />
-        <h3>Alva's PU College, Karnataka, India</h3>
-        <p>Science Pre-University | 2019 - 2021</p>
-        <span>Percentage: 95%</span>
-      </TimelineItem>
-
-      <TimelineItem {...fadeInUp}>
-        <FaUniversity />
-        <h3>M S Ramaiah Institute of Technology</h3>
-        <p>B.E. in Computer Science | 2021 - 2025</p>
-        <span>CGPA: 8.22</span>
-      </TimelineItem>
-    </Timeline>
-  </EducationContainer>
-);
+  return (
+    <EducationContainer id="education">
+      <SectionTitle>Education</SectionTitle>
+      <Timeline>
+        {education.map((edu, index) => (
+          <TimelineItem key={index} {...fadeInUp}>
+            {edu.icon}
+            <h3>{edu.institution}</h3>
+            <p>{edu.degree} | {edu.year}</p>
+            <span>{edu.score}</span>
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </EducationContainer>
+  );
+};
 
 export default Education;

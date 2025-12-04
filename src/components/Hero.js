@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaPlus, FaTimes } from 'react-icons/fa';
-import { SiLeetcode } from 'react-icons/si';
+import { FaPlus, FaTimes, FaDownload } from 'react-icons/fa';
 import { fadeInUp } from '../animations';
+import { portfolioData } from '../data/portfolioData';
 
 const HeroContainer = styled.section`
   padding-top: 80px; /* Adjust this to match navbar height */
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background: transparent;
   color: white;
   padding: 2rem 8%;
   text-align: left;
 
   @media (max-width: 768px) {
-    padding-top: 60px; /* Smaller padding on mobile */
+    padding-top: 100px; /* Smaller padding on mobile */
     flex-direction: column;
     text-align: center;
   }
@@ -107,6 +107,36 @@ const Subtitle = styled.p`
   }
 `;
 
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
+const ResumeButton = styled(motion.a)`
+  background: #c0727f;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(192, 114, 127, 0.4);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #a85d6b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(192, 114, 127, 0.6);
+  }
+`;
+
 /* Floating Action Button */
 const FabContainer = styled.div`
   position: fixed;
@@ -164,6 +194,7 @@ const FabLink = styled(motion.a)`
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { hero } = portfolioData;
 
   const toggleFab = () => {
     setIsOpen(!isOpen);
@@ -175,16 +206,19 @@ const Hero = () => {
         <LeftContent>
           <img src={`${process.env.PUBLIC_URL}/assets/image.png`} alt="Phone with creative digital design" />
           <LuffyQuote>
-            "As Long As I Live, There Are Infinite Chances!" - Monkey D. Luffy
+            "{hero.subQuote}"
           </LuffyQuote>
         </LeftContent>
         <RightContent>
-          <Quote {...fadeInUp}>
-            "Where Ideas Come to Life<br />and <span>Creativity</span> Knows No Bounds"
-          </Quote>
+          <Quote {...fadeInUp} dangerouslySetInnerHTML={{ __html: hero.quote.replace('Creativity', '<span>Creativity</span>').replace('and', '<br />and') }} />
           <Subtitle>
-            At my working space, I don’t just create; I innovate. Step into a world where imagination meets technology, and ideas flourish into extraordinary digital experiences.
+            {hero.description}
           </Subtitle>
+          <ButtonGroup>
+            <ResumeButton href={hero.resumeUrl} target="_blank" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <FaDownload /> Download Resume
+            </ResumeButton>
+          </ButtonGroup>
         </RightContent>
       </HeroContainer>
 
@@ -192,28 +226,24 @@ const Hero = () => {
         <AnimatePresence>
           {isOpen && (
             <FabMenu>
-              <FabLink
-                href="https://www.linkedin.com/in/omkar-nagansur-51272b230/"
-                target="_blank"
-              >
-                <FaLinkedin />
-              </FabLink>
-              <FabLink
-                href="https://leetcode.com/u/omsn529/"
-                target="_blank"
-              >
-                <SiLeetcode />
-              </FabLink>
-              <FabLink
-                href="https://github.com/omsn2"
-                target="_blank"
-              >
-                <FaGithub />
-              </FabLink>
+              {hero.socialLinks.map((link, index) => (
+                <FabLink
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: index * 0.1 }}
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </FabLink>
+              ))}
             </FabMenu>
           )}
         </AnimatePresence>
-        <FabButton onClick={toggleFab}>
+        <FabButton onClick={toggleFab} aria-label="Toggle Social Menu">
           {isOpen ? <FaTimes /> : <FaPlus />}
         </FabButton>
       </FabContainer>

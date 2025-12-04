@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { portfolioData } from '../data/portfolioData';
 
 // Animation for Floating Icons
 const float = keyframes`
@@ -33,7 +34,7 @@ const ContactGrid = styled.div`
   margin-bottom: 3rem;
 `;
 
-const ContactCard = styled(motion.div)`
+const ContactCard = styled(motion.a)`
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   padding: 2rem;
@@ -44,6 +45,8 @@ const ContactCard = styled(motion.div)`
   cursor: pointer;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  display: block;
 
   &:hover {
     transform: translateY(-10px);
@@ -69,96 +72,33 @@ const ContactCard = styled(motion.div)`
   }
 `;
 
-/* Contact Form Styling */
-// const ContactForm = styled.form`
-//   background: rgba(255, 255, 255, 0.1);
-//   backdrop-filter: blur(10px);
-//   padding: 2rem;
-//   border-radius: 15px;
-//   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-//   text-align: left;
-//   color: white;
-//   max-width: 600px;
-//   margin: 0 auto;
-//   border: 1px solid rgba(255, 255, 255, 0.2);
+const Contact = () => {
+  const { contact } = portfolioData;
 
-//   input, textarea {
-//     width: 100%;
-//     background: transparent;
-//     border: none;
-//     border-bottom: 2px solid #6ca49c;
-//     color: white;
-//     font-size: 1.1rem;
-//     padding: 10px;
-//     margin-bottom: 2rem;
-//     outline: none;
-//     transition: border-color 0.3s;
-//   }
+  return (
+    <ContactContainer id="contact">
+      <SectionTitle>Contact Me</SectionTitle>
+      <ContactGrid>
+        <ContactCard href={`mailto:${contact.email}`}>
+          <FaEnvelope />
+          <h3>Email</h3>
+          <p>{contact.email}</p>
+        </ContactCard>
 
-//   input:focus, textarea:focus {
-//     border-bottom: 2px solid #c0727f;
-//   }
+        <ContactCard href={`tel:${contact.phone}`}>
+          <FaPhone />
+          <h3>Phone</h3>
+          <p>{contact.phone}</p>
+        </ContactCard>
 
-//   label {
-//     color: #9ea7d7;
-//     font-size: 1rem;
-//     pointer-events: none;
-//     position: absolute;
-//     left: 10px;
-//     top: 10px;
-//     transition: all 0.3s ease;
-//   }
-
-//   input:focus ~ label, input:valid ~ label,
-//   textarea:focus ~ label, textarea:valid ~ label {
-//     top: -20px;
-//     left: 0;
-//     color: #c0727f;
-//     font-size: 0.9rem;
-//   }
-
-//   button {
-//     background: #6ca49c;
-//     color: white;
-//     border: none;
-//     padding: 10px 20px;
-//     border-radius: 5px;
-//     cursor: pointer;
-//     font-weight: bold;
-//     transition: 0.3s ease-in-out;
-
-//     &:hover {
-//       background: #c0727f;
-//       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-//     }
-//   }
-// `;
-
-const Contact = () => (
-  <ContactContainer id="contact">
-    <SectionTitle>Contact Me</SectionTitle>
-    <ContactGrid>
-      <ContactCard>
-        <FaEnvelope />
-        <h3>Email</h3>
-        <p>omusnagansur989@gmail.com</p>
-      </ContactCard>
-
-      <ContactCard>
-        <FaPhone />
-        <h3>Phone</h3>
-        <p>+91 8623072529</p>
-      </ContactCard>
-
-      <ContactCard>
-        <FaMapMarkerAlt />
-        <h3>Location</h3>
-        <p>Bangalore, India</p>
-      </ContactCard>
-    </ContactGrid>
-
-   
-  </ContactContainer>
-);
+        <ContactCard as="div">
+          <FaMapMarkerAlt />
+          <h3>Location</h3>
+          <p>{contact.location}</p>
+        </ContactCard>
+      </ContactGrid>
+    </ContactContainer>
+  );
+};
 
 export default Contact;
