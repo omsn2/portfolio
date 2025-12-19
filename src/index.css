@@ -1,7 +1,7 @@
 body {
-  background: radial-gradient(circle at top left, #520df3, #9852e7);
-  color: white;
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%);
+  color: #1e293b;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;

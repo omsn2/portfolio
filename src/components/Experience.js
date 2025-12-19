@@ -6,29 +6,30 @@ import { portfolioData } from '../data/portfolioData';
 
 const ExperienceContainer = styled.section`
   padding: 5rem 8%;
-  color: white;
+  color: #1e293b;
   text-align: center;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color: rgb(253, 255, 255);
+  color: #1e293b;
   margin-bottom: 2rem;
   font-weight: bold;
 `;
 
 const ExperienceItem = styled(motion.div)`
-  background: radial-gradient(circle at top left, rgb(15, 15, 15), rgb(169, 107, 250));
+  background: #ffffff;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
   margin: 1rem 0;
   text-align: left;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #e0f2fe;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 6px 15px rgba(255, 87, 51, 0.3);
+    box-shadow: 0px 8px 20px rgba(37, 99, 235, 0.15);
   }
 `;
 

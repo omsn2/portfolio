@@ -6,13 +6,13 @@ import { portfolioData } from '../data/portfolioData';
 
 const SkillsContainer = styled.section`
   padding: 5rem 8%;
-  color: white;
+  color: #1e293b;
   text-align: center;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color: rgb(248, 245, 245);
+  color: #1e293b;
   margin-bottom: 3rem;
   font-weight: bold;
 `;
@@ -23,10 +23,10 @@ const CategoryContainer = styled.div`
 
 const CategoryTitle = styled.h3`
   font-size: 2rem;
-  color: #c0727f;
+  color: #2563eb;
   margin-bottom: 2rem;
   text-align: left;
-  border-bottom: 2px solid #2f2b56;
+  border-bottom: 2px solid #bfdbfe;
   padding-bottom: 0.5rem;
   display: inline-block;
 `;
@@ -38,34 +38,35 @@ const SkillsGrid = styled.div`
 `;
 
 const SkillCard = styled(motion.div)`
-  background: radial-gradient(circle at top left, rgb(15, 15, 15), rgb(169, 107, 250));
+  background: #ffffff;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
+  border: 1px solid #e0f2fe;
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(255, 87, 51, 0.3);
+    box-shadow: 0px 10px 25px rgba(37, 99, 235, 0.15);
   }
 
   svg {
     font-size: 3rem;
-    color: #6ca49c;
+    color: #2563eb;
     margin-bottom: 1rem;
   }
 
   h3 {
     font-size: 1.5rem;
-    color: #9ea7d7;
+    color: #1e293b;
     margin: 0.5rem 0;
   }
 
   p {
     font-size: 1rem;
-    color: #ffffffcc;
+    color: #64748b;
   }
 `;
 
@@ -81,7 +82,7 @@ const Skills = () => {
   return (
     <SkillsContainer id="skills">
       <SectionTitle>Skills</SectionTitle>
-      
+
       {categories.map((category, index) => (
         <CategoryContainer key={index}>
           <CategoryTitle>{category.title}</CategoryTitle>

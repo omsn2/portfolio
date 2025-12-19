@@ -6,18 +6,18 @@ import { fadeInUp } from '../animations';
 import { portfolioData } from '../data/portfolioData';
 
 const HeroContainer = styled.section`
-  padding-top: 80px; /* Adjust this to match navbar height */
+  padding-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   background: transparent;
-  color: white;
+  color: #1e293b;
   padding: 2rem 8%;
   text-align: left;
 
   @media (max-width: 768px) {
-    padding-top: 100px; /* Smaller padding on mobile */
+    padding-top: 100px;
     flex-direction: column;
     text-align: center;
   }
@@ -49,7 +49,7 @@ const LeftContent = styled.div`
 
 const LuffyQuote = styled(motion.p)`
   font-size: 1.3rem;
-  color: rgb(225, 226, 231);
+  color: #475569;
   font-style: italic;
   font-weight: bold;
   margin-top: 1rem;
@@ -82,12 +82,12 @@ const RightContent = styled.div`
 
 const Quote = styled(motion.h1)`
   font-size: 2.2rem;
-  color: #c0727f;
+  color: #2563eb;
   font-weight: bold;
   line-height: 1.3;
 
   span {
-    color: rgb(228, 230, 240);
+    color: #1e293b;
   }
 
   @media (max-width: 768px) {
@@ -98,7 +98,7 @@ const Quote = styled(motion.h1)`
 
 const Subtitle = styled.p`
   font-size: 1rem;
-  color: rgb(225, 227, 240);
+  color: #64748b;
   margin-top: 1rem;
   line-height: 1.6;
 
@@ -118,7 +118,7 @@ const ButtonGroup = styled.div`
 `;
 
 const ResumeButton = styled(motion.a)`
-  background: #c0727f;
+  background: #3b82f6;
   color: white;
   padding: 12px 24px;
   border-radius: 30px;
@@ -127,13 +127,13 @@ const ResumeButton = styled(motion.a)`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(192, 114, 127, 0.4);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
   transition: all 0.3s ease;
 
   &:hover {
-    background: #a85d6b;
+    background: #2563eb;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(192, 114, 127, 0.6);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
   }
 `;
 
@@ -146,7 +146,7 @@ const FabContainer = styled.div`
 `;
 
 const FabButton = styled(motion.button)`
-  background: #c0727f;
+  background: #3b82f6;
   color: white;
   width: 60px;
   height: 60px;
@@ -161,7 +161,7 @@ const FabButton = styled(motion.button)`
   transition: background 0.3s;
 
   &:hover {
-    background: #6ca49c;
+    background: #2563eb;
   }
 `;
 
@@ -174,21 +174,23 @@ const FabMenu = styled.div`
 `;
 
 const FabLink = styled(motion.a)`
-  background: #2f2b56;
-  color: white;
+  background: #ffffff;
+  color: #2563eb;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   font-size: 1.2rem;
-  transition: background 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
+  border: 2px solid #e0f2fe;
 
   &:hover {
-    background: #6ca49c;
+    background: #2563eb;
+    color: #ffffff;
   }
 `;
 

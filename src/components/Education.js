@@ -6,13 +6,13 @@ import { portfolioData } from '../data/portfolioData';
 
 const EducationContainer = styled.section`
   padding: 5rem 8%;
-  color: white;
+  color: #1e293b;
   text-align: center;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color: rgb(245, 243, 243);
+  color: #1e293b;
   margin-bottom: 2rem;
   font-weight: bold;
 `;
@@ -31,24 +31,25 @@ const Timeline = styled.div`
     transform: translateX(-50%);
     width: 4px;
     height: 100%;
-    background: #c0727f;
+    background: #bfdbfe;
   }
 `;
 
 const TimelineItem = styled(motion.div)`
-  background: #2f2b56;
+  background: #ffffff;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
   width: 45%;
   position: relative;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-align: left;
-  color: white;
+  color: #1e293b;
+  border: 1px solid #e0f2fe;
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(255, 87, 51, 0.3);
+    box-shadow: 0px 10px 25px rgba(37, 99, 235, 0.15);
   }
 
   &:nth-child(odd) {
@@ -64,7 +65,7 @@ const TimelineItem = styled(motion.div)`
     position: absolute;
     width: 20px;
     height: 20px;
-    background: #c0727f;
+    background: #2563eb;
     border-radius: 50%;
     top: 20px;
     left: -10px;
@@ -77,24 +78,24 @@ const TimelineItem = styled(motion.div)`
 
   h3 {
     font-size: 1.5rem;
-    color: #9ea7d7;
+    color: #1e293b;
     margin-bottom: 0.5rem;
   }
 
   p {
     font-size: 1rem;
-    color: #ffffffcc;
+    color: #475569;
   }
 
   span {
     display: block;
     margin-top: 0.5rem;
-    color: #6ca49c;
+    color: #2563eb;
     font-weight: bold;
   }
 
   svg {
-    color: #6ca49c;
+    color: #2563eb;
     font-size: 2rem;
     margin-right: 0.5rem;
   }

@@ -8,14 +8,14 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: radial-gradient(circle at top left, #520df3, #e79772);
-  color: #fff;
+  background: #ffffff;
+  color: #1e293b;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
   @media (max-width: 768px) {
     padding: 0.5rem 1.5rem;
@@ -25,7 +25,7 @@ const NavbarContainer = styled.nav`
 const Logo = styled.h1`
   font-size: 1.8rem;
   font-weight: bold;
-  color: rgb(245, 248, 248);
+  color: #1e293b;
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -43,15 +43,16 @@ const NavLinks = styled.ul`
 
   .nav-link {
     text-decoration: none;
-    color: #fff;
+    color: #475569;
     font-size: 1.2rem;
     padding: 8px 12px;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: all 0.3s;
     cursor: pointer;
 
     &:hover {
-      background: radial-gradient(circle at top left, #520df3, #e79772);
+      background: #eff6ff;
+      color: #2563eb;
     }
   }
 
@@ -85,7 +86,7 @@ const MobileNavOverlay = styled(motion.div)`
 `;
 
 const MobileNavLink = styled(Link)`
-  color: white;
+  color: #1e293b;
   font-size: 1.5rem;
   margin: 1.5rem 0;
   cursor: pointer;
@@ -93,7 +94,7 @@ const MobileNavLink = styled(Link)`
   font-weight: bold;
 
   &:hover {
-    color: #e79772;
+    color: #2563eb;
   }
 `;
 

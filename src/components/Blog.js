@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'; // ✅ Link for navigation
 
 const BlogContainer = styled.section`
   padding: 5rem 8%;
-  background: #121212;
+  background: transparent;
   text-align: center;
-  color: white;
+  color: #1e293b;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color: rgb(91, 245, 237); /* Old Rose */
+  color: #1e293b;
   margin-bottom: 2rem;
   font-weight: bold;
 `;
@@ -23,16 +23,17 @@ const BlogGrid = styled.div`
 `;
 
 const BlogCard = styled.div`
-  background: #2f2b56; /* Martinique */
+  background: #ffffff;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
   text-align: left;
+  border: 1px solid #e0f2fe;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 6px 15px rgba(255, 87, 51, 0.3);
+    box-shadow: 0px 8px 20px rgba(37, 99, 235, 0.15);
   }
 `;
 
@@ -43,14 +44,14 @@ const BlogImage = styled.img`
 
 const BlogTitle = styled.h3`
   font-size: 1.5rem;
-  color: #9ea7d7; /* Cold Purple */
+  color: #1e293b;
   margin: 1rem 0;
 `;
 
 const BlogDescription = styled.p`
   font-size: 1rem;
-  color: #fff;
-  opacity: 0.8;
+  color: #64748b;
+  opacity: 0.9;
 `;
 
 const ReadMoreButton = styled(Link)`
@@ -60,13 +61,13 @@ const ReadMoreButton = styled(Link)`
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  background: #6ca49c; /* Sea Nymph */
+  background: #3b82f6;
   border-radius: 5px;
   text-decoration: none;
   transition: 0.3s ease-in-out;
 
   &:hover {
-    background: #c0727f; /* Old Rose */
+    background: #2563eb;
   }
 `;
 

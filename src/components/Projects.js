@@ -6,13 +6,13 @@ import { portfolioData } from '../data/portfolioData';
 
 const ProjectsContainer = styled.section`
   padding: 5rem 8%;
-  color: white;
+  color: #1e293b;
   text-align: center;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color: rgb(248, 247, 247);
+  color: #1e293b;
   margin-bottom: 2rem;
   font-weight: bold;
 `;
@@ -24,18 +24,19 @@ const ProjectGrid = styled.div`
 `;
 
 const ProjectItem = styled(motion.div)`
-  background: radial-gradient(circle at top left, rgb(15, 15, 15), rgb(169, 107, 250));
+  background: #ffffff;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
   text-align: left;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
+  border: 1px solid #e0f2fe;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 6px 15px rgba(255, 87, 51, 0.3);
+    box-shadow: 0px 8px 20px rgba(37, 99, 235, 0.15);
   }
 `;
 
@@ -49,14 +50,15 @@ const ProjectImage = styled.img`
 
 const ProjectTitle = styled.h3`
   font-size: 1.5rem;
-  color: #9ea7d7;
+  color: #1e293b;
   margin: 0.5rem 0;
 `;
 
 const ProjectDescription = styled.p`
-  color: #ffffffcc;
+  color: #475569;
   margin-bottom: 1rem;
   flex-grow: 1;
+  line-height: 1.6;
 `;
 
 const TechStack = styled.div`
@@ -67,8 +69,8 @@ const TechStack = styled.div`
 `;
 
 const TechTag = styled.span`
-  background: rgba(108, 164, 156, 0.2);
-  color: #6ca49c;
+  background: #eff6ff;
+  color: #2563eb;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -83,7 +85,7 @@ const ButtonGroup = styled.div`
 `;
 
 const ProjectButton = styled.a`
-  background: #6ca49c;
+  background: #3b82f6;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -92,7 +94,7 @@ const ProjectButton = styled.a`
   font-weight: bold;
 
   &:hover {
-    background: #c0727f;
+    background: #2563eb;
   }
 `;
 
@@ -105,9 +107,9 @@ const Projects = () => {
       <ProjectGrid>
         {projects.map((project, index) => (
           <ProjectItem key={index} {...fadeInUp} {...hoverEffect}>
-            <ProjectImage 
-              src={`${process.env.PUBLIC_URL}${project.image}`} 
-              alt={project.title} 
+            <ProjectImage
+              src={`${process.env.PUBLIC_URL}${project.image}`}
+              alt={project.title}
             />
             <ProjectTitle>{project.title}</ProjectTitle>
             <TechStack>

@@ -16,13 +16,13 @@ const float = keyframes`
 
 const ContactContainer = styled.section`
   padding: 5rem 8%;
-  color: white;
+  color: #1e293b;
   text-align: center;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color: rgb(246, 247, 247);
+  color: #1e293b;
   margin-bottom: 2rem;
   font-weight: bold;
 `;
@@ -35,40 +35,39 @@ const ContactGrid = styled.div`
 `;
 
 const ContactCard = styled(motion.a)`
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #1e293b;
+  border: 1px solid #e0f2fe;
   text-decoration: none;
   display: block;
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 20px 40px rgba(255, 87, 51, 0.3);
+    box-shadow: 0px 10px 25px rgba(37, 99, 235, 0.15);
   }
 
   svg {
     font-size: 3rem;
-    color: #6ca49c;
+    color: #2563eb;
     margin-bottom: 1rem;
     animation: ${float} 3s ease-in-out infinite;
   }
 
   h3 {
     font-size: 1.5rem;
-    color: #9ea7d7;
+    color: #1e293b;
     margin-bottom: 0.5rem;
   }
 
   p {
     font-size: 1.2rem;
-    color: #ffffffcc;
+    color: #64748b;
   }
 `;
 
