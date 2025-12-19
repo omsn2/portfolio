@@ -8,14 +8,16 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #ffffff;
-  color: #1e293b;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  color: #e2e8f0;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 255, 159, 0.1);
+  border-bottom: 1px solid rgba(0, 255, 159, 0.2);
 
   @media (max-width: 768px) {
     padding: 0.5rem 1.5rem;
@@ -25,8 +27,16 @@ const NavbarContainer = styled.nav`
 const Logo = styled.h1`
   font-size: 1.8rem;
   font-weight: bold;
-  color: #1e293b;
+  color: #00ff9f;
   cursor: pointer;
+  font-family: 'Fira Code', monospace;
+  text-shadow: 0 0 20px rgba(0, 255, 159, 0.5);
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-shadow: 0 0 30px rgba(0, 255, 159, 0.8);
+    transform: scale(1.02);
+  }
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -43,16 +53,35 @@ const NavLinks = styled.ul`
 
   .nav-link {
     text-decoration: none;
-    color: #475569;
-    font-size: 1.2rem;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: all 0.3s;
+    color: #94a3b8;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
     cursor: pointer;
+    font-family: 'Fira Code', monospace;
+    position: relative;
 
     &:hover {
-      background: #eff6ff;
-      color: #2563eb;
+      color: #00ff9f;
+      background: rgba(0, 255, 159, 0.1);
+      box-shadow: 0 0 15px rgba(0, 255, 159, 0.3);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: #00ff9f;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 80%;
     }
   }
 
@@ -86,15 +115,18 @@ const MobileNavOverlay = styled(motion.div)`
 `;
 
 const MobileNavLink = styled(Link)`
-  color: #1e293b;
+  color: white;
   font-size: 1.5rem;
   margin: 1.5rem 0;
   cursor: pointer;
   text-decoration: none;
   font-weight: bold;
+  font-family: 'Fira Code', monospace;
+  transition: all 0.3s ease;
 
   &:hover {
-    color: #2563eb;
+    color: #00ff9f;
+    text-shadow: 0 0 20px rgba(0, 255, 159, 0.6);
   }
 `;
 
@@ -124,6 +156,7 @@ const Navbar = () => {
           <li><Link className="nav-link" to="skills" smooth={true} duration={500}>Skills</Link></li>
           <li><Link className="nav-link" to="projects" smooth={true} duration={500}>Projects</Link></li>
           <li><Link className="nav-link" to="certifications" smooth={true} duration={500}>Certifications</Link></li>
+          <li><Link className="nav-link" to="awards" smooth={true} duration={500}>Awards</Link></li>
           <li><Link className="nav-link" to="contact" smooth={true} duration={500}>Contact</Link></li>
         </NavLinks>
         <MobileMenuIcon onClick={toggleMenu}>
@@ -146,6 +179,7 @@ const Navbar = () => {
             <MobileNavLink to="skills" smooth={true} duration={500} onClick={closeMenu}>Skills</MobileNavLink>
             <MobileNavLink to="projects" smooth={true} duration={500} onClick={closeMenu}>Projects</MobileNavLink>
             <MobileNavLink to="certifications" smooth={true} duration={500} onClick={closeMenu}>Certifications</MobileNavLink>
+            <MobileNavLink to="awards" smooth={true} duration={500} onClick={closeMenu}>Awards</MobileNavLink>
             <MobileNavLink to="contact" smooth={true} duration={500} onClick={closeMenu}>Contact</MobileNavLink>
           </MobileNavOverlay>
         )}

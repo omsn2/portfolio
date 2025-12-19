@@ -13,7 +13,7 @@ export const portfolioData = {
     quote: "Where Ideas Come to Life and Creativity Knows No Bounds",
     subQuote: "As Long As I Live, There Are Infinite Chances! - Monkey D. Luffy",
     description: "At my working space, I don’t just create; I innovate. Step into a world where imagination meets technology, and ideas flourish into extraordinary digital experiences.",
-    resumeUrl: "#", // Placeholder for resume URL
+    resumeUrl: "/assets/resume/OmkarSDEresume.pdf",
     socialLinks: [
       {
         icon: <FaLinkedin />,
@@ -99,6 +99,13 @@ export const portfolioData = {
   },
   projects: [
     {
+      title: "Deepfake and Phishing Detection using VLMs and Blockchain",
+      description: "Multimodal detection system combining text, image, and audio analysis using BERT, ViT, and Wav2Vec2 models. FastAPI backend with MongoDB, JWT authentication, and real-time React dashboard.",
+      image: "/assets/deepfake.jpg",
+      link: "https://github.com/omsn2",
+      techStack: ["Python", "React", "VLMs", "FastAPI", "MongoDB", "Blockchain"]
+    },
+    {
       title: "Langchain Q&A Tool using LLMs",
       description: "Advanced text analysis with NLP, NER, sentiment analysis, multilingual support, and text-to-speech.",
       image: "/assets/langchain2.png",
@@ -135,6 +142,18 @@ export const portfolioData = {
     {
       title: "Docker Training Course for the Absolute Beginner - KodeKloud",
       image: "/assets/certificates/Docker_page-0001.jpg"
+    },
+    {
+      title: "Data Analytics Job Simulation - Deloitte",
+      image: "/assets/certificates/deloiteeData_page-0001.jpg"
+    }
+  ],
+  awards: [
+    {
+      title: "Google Agentic AI Hackathon Finalist",
+      description: "Selected as a finalist in Google's prestigious Agentic AI Hackathon, competing among top developers worldwide.",
+      year: "2025",
+      icon: "🏆"
     }
   ],
   contact: {

@@ -16,15 +16,17 @@ const float = keyframes`
 
 const ContactContainer = styled.section`
   padding: 5rem 8%;
-  color: #1e293b;
+  color: white;
   text-align: center;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color: #1e293b;
+  color: #00ff9f;
   margin-bottom: 2rem;
   font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0 0 30px rgba(0, 255, 159, 0.4);
 `;
 
 const ContactGrid = styled.div`
@@ -35,39 +37,43 @@ const ContactGrid = styled.div`
 `;
 
 const ContactCard = styled(motion.a)`
-  background: #ffffff;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 255, 159, 0.2);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
   cursor: pointer;
-  color: #1e293b;
-  border: 1px solid #e0f2fe;
+  color: white;
   text-decoration: none;
   display: block;
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 10px 25px rgba(37, 99, 235, 0.15);
+    box-shadow: 0px 20px 40px rgba(0, 255, 159, 0.3), 0 0 40px rgba(0, 255, 159, 0.2);
+    border-color: #00ff9f;
   }
 
   svg {
     font-size: 3rem;
-    color: #2563eb;
+    color: #00ff9f;
     margin-bottom: 1rem;
     animation: ${float} 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 159, 0.5));
   }
 
   h3 {
     font-size: 1.5rem;
-    color: #1e293b;
+    color: #00d9ff;
     margin-bottom: 0.5rem;
+    font-family: 'Fira Code', monospace;
   }
 
   p {
     font-size: 1.2rem;
-    color: #64748b;
+    color: #94a3b8;
   }
 `;
 

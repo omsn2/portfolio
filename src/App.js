@@ -8,12 +8,15 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
+import Awards from './components/Awards';
 import Contact from './components/Contact';
+import ConsoleEasterEgg from './components/ConsoleEasterEgg';
 
 const App = () => {
   return (
     <ThemeProvider theme={{}}>
       <Router>
+        <ConsoleEasterEgg />
         <Navbar />
         <Hero />
         <Education />
@@ -21,6 +24,7 @@ const App = () => {
         <Skills />
         <Projects />
         <Certifications />
+        <Awards />
         <Contact />
       </Router>
     </ThemeProvider>

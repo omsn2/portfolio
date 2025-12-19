@@ -6,15 +6,17 @@ import { portfolioData } from '../data/portfolioData';
 
 const ProjectsContainer = styled.section`
   padding: 5rem 8%;
-  color: #1e293b;
+  color: white;
   text-align: center;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 3rem;
-  color: #1e293b;
+  color: #00ff9f;
   margin-bottom: 2rem;
   font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0 0 30px rgba(0, 255, 159, 0.4);
 `;
 
 const ProjectGrid = styled.div`
@@ -24,19 +26,21 @@ const ProjectGrid = styled.div`
 `;
 
 const ProjectItem = styled(motion.div)`
-  background: #ffffff;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 159, 0.2);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
   text-align: left;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  border: 1px solid #e0f2fe;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(37, 99, 235, 0.15);
+    box-shadow: 0px 6px 20px rgba(0, 255, 159, 0.3), 0 0 30px rgba(0, 255, 159, 0.2);
+    border-color: #00ff9f;
   }
 `;
 
@@ -50,12 +54,13 @@ const ProjectImage = styled.img`
 
 const ProjectTitle = styled.h3`
   font-size: 1.5rem;
-  color: #1e293b;
+  color: #00d9ff;
   margin: 0.5rem 0;
+  font-family: 'Fira Code', monospace;
 `;
 
 const ProjectDescription = styled.p`
-  color: #475569;
+  color: #94a3b8;
   margin-bottom: 1rem;
   flex-grow: 1;
   line-height: 1.6;
@@ -69,12 +74,14 @@ const TechStack = styled.div`
 `;
 
 const TechTag = styled.span`
-  background: #eff6ff;
-  color: #2563eb;
-  padding: 4px 8px;
-  border-radius: 4px;
+  background: rgba(0, 255, 159, 0.1);
+  color: #00ff9f;
+  padding: 4px 12px;
+  border-radius: 6px;
   font-size: 0.8rem;
   font-weight: bold;
+  border: 1px solid rgba(0, 255, 159, 0.3);
+  font-family: 'Fira Code', monospace;
 `;
 
 const ButtonGroup = styled.div`
@@ -85,16 +92,20 @@ const ButtonGroup = styled.div`
 `;
 
 const ProjectButton = styled.a`
-  background: #3b82f6;
-  color: white;
+  background: linear-gradient(135deg, #00ff9f, #00d9ff);
+  color: #0a0e27;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   text-decoration: none;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease;
   font-weight: bold;
+  font-family: 'Fira Code', monospace;
+  box-shadow: 0 4px 10px rgba(0, 255, 159, 0.3);
 
   &:hover {
-    background: #2563eb;
+    background: linear-gradient(135deg, #00d9ff, #ff006e);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 255, 159, 0.5), 0 0 20px rgba(0, 255, 159, 0.3);
   }
 `;
 
@@ -107,9 +118,9 @@ const Projects = () => {
       <ProjectGrid>
         {projects.map((project, index) => (
           <ProjectItem key={index} {...fadeInUp} {...hoverEffect}>
-            <ProjectImage
-              src={`${process.env.PUBLIC_URL}${project.image}`}
-              alt={project.title}
+            <ProjectImage 
+              src={`${process.env.PUBLIC_URL}${project.image}`} 
+              alt={project.title} 
             />
             <ProjectTitle>{project.title}</ProjectTitle>
             <TechStack>
